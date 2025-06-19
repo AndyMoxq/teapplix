@@ -6,6 +6,8 @@ use ThankSong\Teapplix\Request\CreateProductsRequest;
 use ThankSong\Teapplix\Response\CreateProductsResponse;
 use ThankSong\Teapplix\Request\DeleteProductsRequest;
 use ThankSong\Teapplix\Response\DeleteProductsResponse;
+use ThankSong\Teapplix\Request\EditProductComboRequest;
+use ThankSong\Teapplix\Response\EditProductComboResponse;
 
 
 /**
@@ -48,5 +50,11 @@ class Teapplix
         $request = new DeleteProductsRequest();
         $request -> setSkuList($teapplix_skus);
         return DeleteProductsResponse::fromArray($request -> delete());
+    }
+
+    public static function editComboProduct(array $combo_product): EditProductComboResponse{
+        $request = new EditProductComboRequest();
+        $request -> setComboProudct($combo_product);
+        return EditProductComboResponse::fromArray($request -> put());
     }
 }
