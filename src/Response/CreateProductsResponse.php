@@ -11,7 +11,7 @@ class CreateProductsResponse extends Response {
         $products = $this->getBody()['Products'] ?? [];
         foreach ($products as $product) {
             if($product['Status'] == 'Success'){
-                $skuList[] = $product['SKU'];
+                $skuList[] = $product['ItemName'];
             }
         }
         return $skuList;
@@ -22,7 +22,7 @@ class CreateProductsResponse extends Response {
         $products = $this->getBody()['Products'] ?? [];
         foreach ($products as $product) {
             if($product['Status'] == 'Failure'){
-                $skuList[] = $product['SKU'];
+                $skuList[] = $product['ItemName'];
             }
         }
         return $skuList;
