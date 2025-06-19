@@ -17,4 +17,8 @@ class GetProductsResponse extends Response {
     public function getPageSize(): int {
         return $this->getBody()['Pagination']['PageSize'] ?? 100;
     }
+
+    public function hasMore(): bool{
+        return count($this->getData()) == $this->getPageSize();
+    }
 }
