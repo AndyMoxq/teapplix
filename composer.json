@@ -1,0 +1,31 @@
+{
+  "name": "thank-song/teapplix",
+  "description": "Laravel package for Teapplix API.",
+  "type": "library",
+  "keywords": ["laravel", "teapplix"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andy M.",
+      "email": "andy@outsofas.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ThankSong\\Teapplix\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ThankSong\\Teapplix\\Providers\\TeapplixServiceProvider"
+      ],
+      "aliases": {
+        "Teapplix": "ThankSong\\Teapplix\\Facades\\Teapplix"
+      }
+    }
+  }
+}
