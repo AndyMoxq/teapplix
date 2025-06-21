@@ -8,6 +8,8 @@ use ThankSong\Teapplix\Request\DeleteProductsRequest;
 use ThankSong\Teapplix\Response\DeleteProductsResponse;
 use ThankSong\Teapplix\Request\EditProductComboRequest;
 use ThankSong\Teapplix\Response\EditProductComboResponse;
+use ThankSong\Teapplix\Request\GetOrdersRequest;
+use ThankSong\Teapplix\Response\GetOrdersResponse;
 
 
 /**
@@ -56,5 +58,13 @@ class Teapplix
         $request = new EditProductComboRequest();
         $request -> setComboProudct($combo_product);
         return EditProductComboResponse::fromArray($request -> put());
+    }
+
+    public static function getOrders(array $params=[]): GetOrdersResponse{
+        $request = new GetOrdersRequest();
+        if(!empty($params)){
+            $request -> setBody($params);
+        }
+        return GetOrdersResponse::fromArray($request -> get());
     }
 }
